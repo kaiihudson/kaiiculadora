@@ -119,9 +119,9 @@ for(var idArray = 0; idArray < buttonArray.lenght; idArray++){
         		break;
 		    default:
 		    	if (input2.innerHTML != null){
-		    		input3.innerHTML = input
+		    		input3.innerHTML += input
 		    	} else{
-		    		input1.innerHTML = input
+		    		input1.innerHTML += input
 		    	};
         		break;
 		}
@@ -129,9 +129,13 @@ for(var idArray = 0; idArray < buttonArray.lenght; idArray++){
 
 	
 	//la cosa para que funcione con clics
-/*	buttonArray[idArray].addEventListener('click',function(){
-				var buttonValue	=this.id;
-					inputValue	=userInput.innerHTML;
+	buttonArray[idArray].addEventListener('click',function(){
+		var buttonValue	= this.id;
+			inputValue1	= input1.innerHTML;
+			inputValue2 = input2.innerHTML;
+			inputValue3 = input3.innerHTML;
+			alert(buttonValue);
+			alert(inputValue);
 			//añade las funciones para clear e igual
 			switch(buttonValue){
 				case "clear":
@@ -144,17 +148,19 @@ for(var idArray = 0; idArray < buttonArray.lenght; idArray++){
 					result();
 					break;
 				case "potency":
-        			input2.innerHTML += "**";
+        			input2.innerHTML += "^";
         			break;
 				case "square":
-					input2.innerHTML += "**2";
+					input2.innerHTML += "^";
+					input3.innerHTML = "2";
 					break;
 				default:
-					input2 != null ? input3.innerHTML += buttonValue : input1.innerHTML += buttonValue
+					if (input2.innerHTML != null){
+						input3.innerHTML += input
+					} else {
+						input1.innerHTML += input
+					}
 					break;
 			}
-	});
-*/	
-	//la cosa para que cambie de input si existe un operando
-	//input2.innerHTML != null ? input3.innerHTML = input : input1.innerHTML = input;
+	});	
 };
