@@ -6,9 +6,8 @@ const buttonArray		=document.querySelectorAll(".key td"),
 	result			=document.querySelector(".result")
 function rootn(){
 	//funcion raiz
-	const 
-		x = input1.innerHTML,
-		y = input3.innerHTML,
+	const 		x = input1.innerHTML,
+				y = input3.innerHTML,
 		checkOdd = y % 2;
 	if (checkOdd === 1 || x < 0){
 		x = -x;
@@ -20,9 +19,9 @@ function rootn(){
 		};
 	};
 function resultFunction(){
-	const x = input1.innerHTML,
-		y = input2.innerHTML,
-		z = input3.innerHTML;
+	const 	x = input1.innerHTML,
+			y = input2.innerHTML,
+			z = input3.innerHTML;
 	let equation;
 	//armar la ecuacion
 	switch(y){
@@ -47,7 +46,7 @@ function resultFunction(){
 		}
 	};
 //------------------------------
-//
+// codigo para que funcione con el teclado
 //------------------------------
 
 document.onkeypress = function(event){
@@ -127,12 +126,12 @@ document.onkeypress = function(event){
 	}
 }
 
-for(let idArray = 0; idArray < buttonArray.length; idArray++){
-	console.log(idArray)
-	//la cosa para que funcione con el teclado
-	
+//------------------------------
+// codigo para que funcione con las teclas
+//------------------------------
 
-	
+for(let idArray = 0; idArray < buttonArray.length; idArray++){
+	//console.log(idArray)
 	//la cosa para que funcione con clics
 	buttonArray[idArray].addEventListener('click',function(){
 		const buttonValue	= this.id
