@@ -7,8 +7,8 @@ const buttonArray		=document.querySelectorAll(".key td"),
 function rootn(){
 	//funcion raiz
 	const 		x = input1.innerHTML,
-				y = input3.innerHTML,
-		checkOdd = y % 2;
+				z = input3.innerHTML,
+		checkOdd = z % 2;
 	if (checkOdd === 1 || x < 0){
 		x = -x;
 	};
@@ -18,6 +18,18 @@ function rootn(){
 		return	checkOdd ? resultRoot: -resultRoot;
 		};
 	};
+function ans(){
+	input1.innerHTML == result.innerHTML;
+	input2.innerHTML == null;
+	input3.innerHTML == null;
+	result.innerHTML == null;
+	};
+function continue(){
+	let memory == "";
+	if ( result.innerHTML != null && event = ){
+
+	}
+}
 function resultFunction(){
 	const 	x = input1.innerHTML,
 			y = input2.innerHTML,
@@ -110,18 +122,13 @@ document.onkeypress = function(event){
 			break;
 		case 67:
 		// tecla c
-		  case 99:
+	    case 99:
 			input1.innerHTML = null;
 			input2.innerHTML = null;
 			input3.innerHTML = null;
 			result.innerHTML = null;
 			break;
 		default:
-			if (input2.innerHTML != null){
-				input3.innerHTML += input
-			} else{
-				input1.innerHTML += input
-			};
 			break;
 	}
 }
@@ -134,11 +141,12 @@ for(let idArray = 0; idArray < buttonArray.length; idArray++){
 	//console.log(idArray)
 	//la cosa para que funcione con clics
 	buttonArray[idArray].addEventListener('click',function(){
-		const buttonValue	= this.id
-		    inputValue1	= input1.innerHTML,
-			inputValue2 = input2.innerHTML,
-			inputValue3 = input3.innerHTML;
-			//añade las funciones para clear e igual
+		const 		buttonValue	= this.id
+		    		inputValue1	= input1.innerHTML,
+					inputValue2 = input2.innerHTML,
+					inputValue3 = input3.innerHTML;
+		let inputKeyboard = input2.innerHTML.trim() === "" ? input1 : input3;
+			//añade casos especificos
 			switch(buttonValue){
 				case "clear":
 		        input1.innerHTML = "";
@@ -157,12 +165,19 @@ for(let idArray = 0; idArray < buttonArray.length; idArray++){
 					input3.innerHTML = "2";
 					break;
 				default:
-					if (input2.innerHTML != null){
-						input3.innerHTML += input
-					} else {
-						input1.innerHTML += input
-					}
 					break;
 			}
 	});	
 };
+
+
+// ------
+// 1.- con el resultado presente:
+//	a.- si presiono un numero, guardar resultado, pero no borrarlo, borrar input 1 2 y 3
+//	b.- si presiono una operacion, ans, operacion y finalmente pedir input3
+// 2.- agregar una tabla al costado para usarla de memoria para la calculadora, 5 espacios
+// 	a.- ser capaz de utilizar esos resultados como input1 al hacerle clic
+// 3.- agregar mas funciones según calculadora cientifica
+// 4.- create easter eggs for shit and giggles
+// 5.- agregar capacidad de ejecutar algebra simple (detectar valor de x) [extra points]
+// ---
