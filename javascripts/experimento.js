@@ -24,12 +24,14 @@ function ans(){
 	input3.innerHTML == null;
 	result.innerHTML == null;
 	};
+/*
 function continue(){
 	let memory == "";
 	if ( result.innerHTML != null && event = ){
 
 	}
 }
+*/
 function resultFunction(){
 	const 	x = input1.innerHTML,
 			y = input2.innerHTML,
