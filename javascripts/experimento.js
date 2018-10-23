@@ -33,19 +33,12 @@ function rootn(){
 		return	checkOdd ? resultRoot: -resultRoot;
 		};
 	};
-
-function ans(){
-	input1.innerHTML == result.innerHTML;
-	input2.innerHTML == null;
-	input3.innerHTML == null;
-	result.innerHTML == null;
-	};
-
 /*
 function continue(){
-	let memory == "";
-	if ( result.innerHTML != null && event = ){
-
+	if ( result.innerHTML != null && function(event) clic on memx){
+		let value = this.innerHTML;
+		input1.innerHTML = value;
+		input2.innerHTML = "";
 	}
 }
 */
@@ -88,7 +81,7 @@ document.onkeypress = function(event){
 		inputNumbers.innerHTML += (key-48)
 		return
 	}
-		
+	console.log(key)
 	switch(key){
 		case 42:
 			input2.innerHTML += "*";
@@ -149,6 +142,13 @@ document.onkeypress = function(event){
 			input3.innerHTML = null;
 			result.innerHTML = null;
 			break;
+		//tecla a
+		case 97:
+			input1.innerHTML =	result.innerHTML;
+			input2.innerHTML = "";
+			input3.innerHTML = "";
+			result.innerHTML = "";
+			break;
 		default:					
 			break;
 	}
@@ -165,34 +165,47 @@ document.onkeypress = function(event){
 
 for(let idArray = 0; idArray < buttonArray.length; idArray++){
 	//la cosa para que funcione con clics
-	buttonArray[idArray].addEventListener('click',function(){
-		const 		buttonValue	= this.id
-		    		inputValue1	= input1.innerHTML,
-					inputValue2 = input2.innerHTML,
-					inputValue3 = input3.innerHTML;
-			let inputClick = input2.innerHTML.trim() === "" ? input1 : input3;
-			console.log(buttonValue);
-			//añade casos especificos
-			switch(buttonValue){
+	operator[idArray].addEventListener('click', function(){
+		const 	operatorValue 	= this.id, 
+				inputValue2		= input2.innerHTML;
+				//añade casos especificos
+				console.log(operatorValue);
+				console.log(inputValue2)
+		switch(operatorValue){
 				case "clear":
 		        input1.innerHTML = "";
 		        input2.innerHTML = "";
 		        input3.innerHTML = "";
 		        result.innerHTML = "";
         		break;
-				case "=":
-					resultFunction();
-					break;
-				case "potency":
+        		case "potency":
         			input2.innerHTML += "^";
         			break;
 				case "square":
 					input2.innerHTML += "^";
 					input3.innerHTML = "2";
 					break;
+				case "=":
+					let equation = resultFunction();
+					if (equation) {
+						try {		
+							result.innerHTML = "" + eval(equation);
+							let maxlength = 4;
+							memoryArray.length > maxlength ? memoryArray.pop() && memoryArray.unshift( eval(equation) ) : memoryArray.unshift( eval(equation) );
+							} 
+						catch (e) {
+							   alert("ERROR");
+							};
+						};
+					break;
 				default:
 					break;
-			}
+		};
+	});
+	buttonArray[idArray].addEventListener('click',function(){
+		const 		buttonValue	= this.id, 
+		    		inputValue1	= input1.innerHTML,
+					inputValue3 = input3.innerHTML;
 	});	
 };
 
