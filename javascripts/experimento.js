@@ -124,7 +124,6 @@ document.onkeypress = function(event){
 					result.innerHTML = "" + eval(equation);
 					let maxlength = 4;
 					memoryArray.length > maxlength ? memoryArray.pop() && memoryArray.unshift( eval(equation) ) : memoryArray.unshift( eval(equation) );
-					console.log(memoryArray)
 					} catch (e) {
 					   alert("ERROR");
 					}
@@ -141,11 +140,11 @@ document.onkeypress = function(event){
 		default:					
 			break;
 	}
-	document.getElementById('mem1').innerHTML = memoryArray[0];
-	document.getElementById('mem2').innerHTML = memoryArray[1];
-	document.getElementById('mem3').innerHTML = memoryArray[2];
-	document.getElementById('mem4').innerHTML = memoryArray[3];
-	document.getElementById('mem5').innerHTML = memoryArray[4];
+	document.getElementById('mem1').innerHTML= memoryArray[0];
+	memoryArray[1] == null ? document.getElementById('mem2').innerHTML="" : document.getElementById('mem2').innerHTML= memoryArray[1];
+	memoryArray[2] == null ? document.getElementById('mem3').innerHTML="" : document.getElementById('mem3').innerHTML= memoryArray[2];
+	memoryArray[3] == null ? document.getElementById('mem4').innerHTML="" : document.getElementById('mem4').innerHTML= memoryArray[3];
+	memoryArray[4] == null ? document.getElementById('mem5').innerHTML="" : document.getElementById('mem5').innerHTML= memoryArray[4];
 }
 
 //------------------------------
