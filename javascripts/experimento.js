@@ -122,12 +122,10 @@ document.onkeypress = function(event){
 			  if (equation) {
 				   try {		
 					result.innerHTML = "" + eval(equation);
-					let maxlength = 5;
-
-					memoryArray.push(eval(equation));
-					console.log(memoryArray);
-					   } 
-					catch (e) {
+					let maxlength = 4;
+					memoryArray.length > maxlength ? memoryArray.pop() && memoryArray.unshift( eval(equation) ) : memoryArray.unshift( eval(equation) );
+					console.log(memoryArray)
+					} catch (e) {
 					   alert("ERROR");
 					}
 				};		    	
@@ -140,9 +138,14 @@ document.onkeypress = function(event){
 			input3.innerHTML = null;
 			result.innerHTML = null;
 			break;
-		default:
+		default:					
 			break;
 	}
+	document.getElementById('mem1').innerHTML = memoryArray[0];
+	document.getElementById('mem2').innerHTML = memoryArray[1];
+	document.getElementById('mem3').innerHTML = memoryArray[2];
+	document.getElementById('mem4').innerHTML = memoryArray[3];
+	document.getElementById('mem5').innerHTML = memoryArray[4];
 }
 
 //------------------------------
