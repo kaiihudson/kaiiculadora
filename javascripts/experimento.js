@@ -1,3 +1,15 @@
+
+// ------
+// 1.- con el resultado presente (funcion continue):
+//	a.- si presiono un numero, guardar resultado, pero no borrarlo, borrar input 1 2 y 3
+//	b.- si presiono una operacion, ans, operacion y finalmente pedir input3
+// 2.- agregar una tabla al costado para usarla de memoria para la calculadora, 5 espacios //DONE
+// 	a.- ser capaz de utilizar esos resultados como input1 al hacerle clic
+// 3.- agregar mas funciones según calculadora cientifica
+// 4.- create easter eggs for shit and giggles
+// 5.- agregar capacidad de ejecutar algebra simple (detectar valor de x) [extra points]
+// ---
+
 const buttonArray		=document.querySelectorAll(".key td"),
 	operator		=document.querySelectorAll(".op td"),
 	input1			=document.querySelector(".firoper"),
@@ -184,14 +196,3 @@ for(let idArray = 0; idArray < buttonArray.length; idArray++){
 	});	
 };
 
-
-// ------
-// 1.- con el resultado presente:
-//	a.- si presiono un numero, guardar resultado, pero no borrarlo, borrar input 1 2 y 3
-//	b.- si presiono una operacion, ans, operacion y finalmente pedir input3
-// 2.- agregar una tabla al costado para usarla de memoria para la calculadora, 5 espacios
-// 	a.- ser capaz de utilizar esos resultados como input1 al hacerle clic
-// 3.- agregar mas funciones según calculadora cientifica
-// 4.- create easter eggs for shit and giggles
-// 5.- agregar capacidad de ejecutar algebra simple (detectar valor de x) [extra points]
-// ---
