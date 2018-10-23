@@ -10,14 +10,14 @@
 // 5.- agregar capacidad de ejecutar algebra simple (detectar valor de x) [extra points]
 // ---
 
-const buttonArray		=document.querySelectorAll(".key td"),
-	operator		=document.querySelectorAll(".op td"),
-	input1			=document.querySelector(".firoper"),
-	input2			=document.querySelector(".secoper"),
-	input3			=document.querySelector(".thioper"),
-	result			=document.querySelector(".result"),
-	memory 			=document.querySelector(".memory li"),
-	memoryArray 	=[];
+const 	buttonArray		=document.querySelectorAll(".key"),
+		operator		=document.querySelectorAll(".op"),
+		input1			=document.querySelector(".firoper"),
+		input2			=document.querySelector(".secoper"),
+		input3			=document.querySelector(".thioper"),
+		result			=document.querySelector(".result"),
+		memory 			=document.querySelector(".memory li"),
+		memoryArray 	=[];
 
 function rootn(){
 	//funcion raiz
@@ -164,14 +164,14 @@ document.onkeypress = function(event){
 //------------------------------
 
 for(let idArray = 0; idArray < buttonArray.length; idArray++){
-	//console.log(idArray)
 	//la cosa para que funcione con clics
 	buttonArray[idArray].addEventListener('click',function(){
 		const 		buttonValue	= this.id
 		    		inputValue1	= input1.innerHTML,
 					inputValue2 = input2.innerHTML,
 					inputValue3 = input3.innerHTML;
-		let inputKeyboard = input2.innerHTML.trim() === "" ? input1 : input3;
+			let inputClick = input2.innerHTML.trim() === "" ? input1 : input3;
+			console.log(buttonValue);
 			//añade casos especificos
 			switch(buttonValue){
 				case "clear":
