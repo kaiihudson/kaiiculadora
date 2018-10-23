@@ -3,7 +3,10 @@ const buttonArray		=document.querySelectorAll(".key td"),
 	input1			=document.querySelector(".firoper"),
 	input2			=document.querySelector(".secoper"),
 	input3			=document.querySelector(".thioper"),
-	result			=document.querySelector(".result")
+	result			=document.querySelector(".result"),
+	memory 			=document.querySelector(".memory li"),
+	memoryArray 	=[];
+
 function rootn(){
 	//funcion raiz
 	const 		x = input1.innerHTML,
@@ -18,12 +21,14 @@ function rootn(){
 		return	checkOdd ? resultRoot: -resultRoot;
 		};
 	};
+
 function ans(){
 	input1.innerHTML == result.innerHTML;
 	input2.innerHTML == null;
 	input3.innerHTML == null;
 	result.innerHTML == null;
 	};
+
 /*
 function continue(){
 	let memory == "";
@@ -59,6 +64,7 @@ function resultFunction(){
 			return equation
 		}
 	};
+
 //------------------------------
 // codigo para que funcione con el teclado
 //------------------------------
@@ -116,6 +122,10 @@ document.onkeypress = function(event){
 			  if (equation) {
 				   try {		
 					result.innerHTML = "" + eval(equation);
+					let maxlength = 5;
+
+					memoryArray.push(eval(equation));
+					console.log(memoryArray);
 					   } 
 					catch (e) {
 					   alert("ERROR");
