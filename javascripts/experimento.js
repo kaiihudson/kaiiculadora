@@ -56,7 +56,7 @@ document.onkeypress = function(event){
 		inputNumbers.innerHTML += (key-48)
 		return
 	}
-		
+	//alert(key); 		
 	switch(key){
 		case 42:
 			input2.innerHTML += "*";
@@ -80,6 +80,7 @@ document.onkeypress = function(event){
 		//tecla q
 		case 113:
 			input2.innerHTML = "sqroot";
+			input3.innerHTML = "2" ;
 			break;
 		//tecla w
 		case 119:
@@ -95,8 +96,8 @@ document.onkeypress = function(event){
 			input2.innerHTML = "rootn";
 			break;
 		//tecla send
-		  case 13:
-		  //tecla =
+		case 13:
+		//tecla =
 		case 61:
 			let equation = resultFunction();
 			  if (equation) {
@@ -110,18 +111,19 @@ document.onkeypress = function(event){
 			break;
 		case 67:
 		// tecla c
-		  case 99:
+		case 99:
 			input1.innerHTML = null;
 			input2.innerHTML = null;
 			input3.innerHTML = null;
 			result.innerHTML = null;
 			break;
+		case 97:
+			input1.innerHTML = result.innerHTML;
+			input2.innerHTML = null;
+			input3.innerHTML = null;
+			result.innerHTML = null;
+			break;
 		default:
-			if (input2.innerHTML != null){
-				input3.innerHTML += input
-			} else{
-				input1.innerHTML += input
-			};
 			break;
 	}
 }
@@ -157,11 +159,6 @@ for(let idArray = 0; idArray < buttonArray.length; idArray++){
 					input3.innerHTML = "2";
 					break;
 				default:
-					if (input2.innerHTML != null){
-						input3.innerHTML += input
-					} else {
-						input1.innerHTML += input
-					}
 					break;
 			}
 	});	
