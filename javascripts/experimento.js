@@ -18,21 +18,20 @@ const 	buttonArray		=document.querySelectorAll(".key"),
 		result			=document.querySelector(".result"),
 		memory 			=document.querySelector(".memory li"),
 		memoryArray 	=[];
-
-function rootn(){
+/*
+function rootn(x,z){
 	//funcion raiz
-	const 		x = input1.innerHTML,
-				z = input3.innerHTML,
-		checkOdd = z % 2;
-	if (checkOdd === 1 || x < 0){
-		x = -x;
+	let checkOdd = z % 2
+	if (checkOdd === 1 || x < 0) {
+		let x = -x ; 
 	};
-	const resultRoot = x ** 1/y ;
-	const	norm = resultRoot ** y ;
-	if (Math.abs( x - norm ) && ( x > 0 === norm > 0)){
-		return	checkOdd ? resultRoot: -resultRoot;
-		};
-	};
+	let resultRoot 	= x ** 1/z ;
+	let normal 		= resultRoot ** z ;
+	if (Math.abs( x - normal ) && ( x > 0 === normal > 0)) {
+		return checkOdd ? resultRoot : -resultRoot
+	}
+};
+*/
 /*
 function continue(){
 	if ( result.innerHTML != null && function(event) clic on memx){
@@ -53,7 +52,7 @@ function resultFunction(){
 			equation = x + "**" + z;
 			break;
 		case "rootn":
-			equation = "rootn(" + x + "," + z + ")";
+			equation = x + " ** 1/" + z;
 			break;
 		case "sqroot":
 			equation = "Math.sqrt(" + x + ")";
@@ -132,8 +131,11 @@ document.onkeypress = function(event){
 					result.innerHTML = "" + eval(equation);
 					let maxlength = 4;
 					memoryArray.length > maxlength ? memoryArray.pop() && memoryArray.unshift( eval(equation) ) : memoryArray.unshift( eval(equation) );
+					console.log(equation);
 					} catch (e) {
-					   alert("ERROR");
+						console.log(equation);
+						console.log(eval(equation));
+						alert("ERROR");
 					}
 				};		    	
 			break;
@@ -186,6 +188,19 @@ for(let idArray = 0; idArray < buttonArray.length; idArray++){
 				break;
 			case "*":
 				input2.innerHTML = "*";
+				break;
+			case "root":
+				input2.innerHTML = "sqroot";
+				input3.innerHTML = "2" ;
+				break;
+			case "rootx":
+				input2.innerHTML = "rootn";
+				break;
+			case "ans":
+				input1.innerHTML =	result.innerHTML;
+				input2.innerHTML = "";
+				input3.innerHTML = "";
+				result.innerHTML = "";
 				break;
 			case "clear":
 		    	input1.innerHTML = "";
