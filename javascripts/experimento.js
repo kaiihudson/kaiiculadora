@@ -1,14 +1,29 @@
-const buttonArray		=document.querySelectorAll(".key td"),
-	operator		=document.querySelectorAll(".op td"),
-	input1			=document.querySelector(".firoper"),
-	input2			=document.querySelector(".secoper"),
-	input3			=document.querySelector(".thioper"),
-	result			=document.querySelector(".result")
+
+// ------
+// 1.- con el resultado presente (funcion continue):
+//	a.- si presiono un numero, guardar resultado, pero no borrarlo, borrar input 1 2 y 3
+//	b.- si presiono una operacion, ans, operacion y finalmente pedir input3
+// 2.- agregar una tabla al costado para usarla de memoria para la calculadora, 5 espacios //DONE
+// 	a.- ser capaz de utilizar esos resultados como input1 al hacerle clic
+// 3.- agregar mas funciones según calculadora cientifica
+// 4.- create easter eggs for shit and giggles
+// 5.- agregar capacidad de ejecutar algebra simple (detectar valor de x) [extra points]
+// ---
+
+const 	buttonArray		=document.querySelectorAll(".key"),
+		operator		=document.querySelectorAll(".op"),
+		input1			=document.querySelector(".firoper"),
+		input2			=document.querySelector(".secoper"),
+		input3			=document.querySelector(".thioper"),
+		result			=document.querySelector(".result"),
+		memory 			=document.querySelector(".memory li"),
+		memoryArray 	=[];
+
 function rootn(){
 	//funcion raiz
 	const 		x = input1.innerHTML,
-				y = input3.innerHTML,
-		checkOdd = y % 2;
+				z = input3.innerHTML,
+		checkOdd = z % 2;
 	if (checkOdd === 1 || x < 0){
 		x = -x;
 	};
@@ -18,6 +33,15 @@ function rootn(){
 		return	checkOdd ? resultRoot: -resultRoot;
 		};
 	};
+/*
+function continue(){
+	if ( result.innerHTML != null && function(event) clic on memx){
+		let value = this.innerHTML;
+		input1.innerHTML = value;
+		input2.innerHTML = "";
+	}
+}
+*/
 function resultFunction(){
 	const 	x = input1.innerHTML,
 			y = input2.innerHTML,
@@ -45,6 +69,7 @@ function resultFunction(){
 			return equation
 		}
 	};
+
 //------------------------------
 // codigo para que funcione con el teclado
 //------------------------------
@@ -56,7 +81,11 @@ document.onkeypress = function(event){
 		inputNumbers.innerHTML += (key-48)
 		return
 	}
+<<<<<<< HEAD
 	//alert(key); 		
+=======
+	console.log(key)
+>>>>>>> 5df6f20d2bfda994574bf9d48e505266f998b6c6
 	switch(key){
 		case 42:
 			input2.innerHTML += "*";
@@ -103,20 +132,26 @@ document.onkeypress = function(event){
 			  if (equation) {
 				   try {		
 					result.innerHTML = "" + eval(equation);
-					   } 
-					catch (e) {
+					let maxlength = 4;
+					memoryArray.length > maxlength ? memoryArray.pop() && memoryArray.unshift( eval(equation) ) : memoryArray.unshift( eval(equation) );
+					} catch (e) {
 					   alert("ERROR");
 					}
 				};		    	
 			break;
 		case 67:
 		// tecla c
+<<<<<<< HEAD
 		case 99:
+=======
+	    case 99:
+>>>>>>> 5df6f20d2bfda994574bf9d48e505266f998b6c6
 			input1.innerHTML = null;
 			input2.innerHTML = null;
 			input3.innerHTML = null;
 			result.innerHTML = null;
 			break;
+<<<<<<< HEAD
 		case 97:
 			input1.innerHTML = result.innerHTML;
 			input2.innerHTML = null;
@@ -124,8 +159,23 @@ document.onkeypress = function(event){
 			result.innerHTML = null;
 			break;
 		default:
+=======
+		//tecla a
+		case 97:
+			input1.innerHTML =	result.innerHTML;
+			input2.innerHTML = "";
+			input3.innerHTML = "";
+			result.innerHTML = "";
+			break;
+		default:					
+>>>>>>> 5df6f20d2bfda994574bf9d48e505266f998b6c6
 			break;
 	}
+	document.getElementById('mem1').innerHTML= memoryArray[0];
+	memoryArray[1] == null ? document.getElementById('mem2').innerHTML="" : document.getElementById('mem2').innerHTML= memoryArray[1];
+	memoryArray[2] == null ? document.getElementById('mem3').innerHTML="" : document.getElementById('mem3').innerHTML= memoryArray[2];
+	memoryArray[3] == null ? document.getElementById('mem4').innerHTML="" : document.getElementById('mem4').innerHTML= memoryArray[3];
+	memoryArray[4] == null ? document.getElementById('mem5').innerHTML="" : document.getElementById('mem5').innerHTML= memoryArray[4];
 }
 
 //------------------------------
@@ -133,33 +183,48 @@ document.onkeypress = function(event){
 //------------------------------
 
 for(let idArray = 0; idArray < buttonArray.length; idArray++){
-	//console.log(idArray)
 	//la cosa para que funcione con clics
-	buttonArray[idArray].addEventListener('click',function(){
-		const buttonValue	= this.id
-		    inputValue1	= input1.innerHTML,
-			inputValue2 = input2.innerHTML,
-			inputValue3 = input3.innerHTML;
-			//añade las funciones para clear e igual
-			switch(buttonValue){
+	operator[idArray].addEventListener('click', function(){
+		const 	operatorValue 	= this.id, 
+				inputValue2		= input2.innerHTML;
+				//añade casos especificos
+				console.log(operatorValue);
+				console.log(inputValue2)
+		switch(operatorValue){
 				case "clear":
 		        input1.innerHTML = "";
 		        input2.innerHTML = "";
 		        input3.innerHTML = "";
 		        result.innerHTML = "";
         		break;
-				case "=":
-					resultFunction();
-					break;
-				case "potency":
+        		case "potency":
         			input2.innerHTML += "^";
         			break;
 				case "square":
 					input2.innerHTML += "^";
 					input3.innerHTML = "2";
 					break;
+				case "=":
+					let equation = resultFunction();
+					if (equation) {
+						try {		
+							result.innerHTML = "" + eval(equation);
+							let maxlength = 4;
+							memoryArray.length > maxlength ? memoryArray.pop() && memoryArray.unshift( eval(equation) ) : memoryArray.unshift( eval(equation) );
+							} 
+						catch (e) {
+							   alert("ERROR");
+							};
+						};
+					break;
 				default:
 					break;
-			}
+		};
+	});
+	buttonArray[idArray].addEventListener('click',function(){
+		const 		buttonValue	= this.id, 
+		    		inputValue1	= input1.innerHTML,
+					inputValue3 = input3.innerHTML;
 	});	
 };
+
