@@ -81,11 +81,9 @@ document.onkeypress = function(event){
 		inputNumbers.innerHTML += (key-48)
 		return
 	}
-<<<<<<< HEAD
+
 	//alert(key); 		
-=======
-	console.log(key)
->>>>>>> 5df6f20d2bfda994574bf9d48e505266f998b6c6
+//	console.log(key)
 	switch(key){
 		case 42:
 			input2.innerHTML += "*";
@@ -141,25 +139,13 @@ document.onkeypress = function(event){
 			break;
 		case 67:
 		// tecla c
-<<<<<<< HEAD
 		case 99:
-=======
 	    case 99:
->>>>>>> 5df6f20d2bfda994574bf9d48e505266f998b6c6
 			input1.innerHTML = null;
 			input2.innerHTML = null;
 			input3.innerHTML = null;
 			result.innerHTML = null;
 			break;
-<<<<<<< HEAD
-		case 97:
-			input1.innerHTML = result.innerHTML;
-			input2.innerHTML = null;
-			input3.innerHTML = null;
-			result.innerHTML = null;
-			break;
-		default:
-=======
 		//tecla a
 		case 97:
 			input1.innerHTML =	result.innerHTML;
@@ -168,7 +154,6 @@ document.onkeypress = function(event){
 			result.innerHTML = "";
 			break;
 		default:					
->>>>>>> 5df6f20d2bfda994574bf9d48e505266f998b6c6
 			break;
 	}
 	document.getElementById('mem1').innerHTML= memoryArray[0];
@@ -185,46 +170,57 @@ document.onkeypress = function(event){
 for(let idArray = 0; idArray < buttonArray.length; idArray++){
 	//la cosa para que funcione con clics
 	operator[idArray].addEventListener('click', function(){
-		const 	operatorValue 	= this.id, 
-				inputValue2		= input2.innerHTML;
+		const 	operatorValue 	= this.id ; 
 				//añade casos especificos
-				console.log(operatorValue);
-				console.log(inputValue2)
+//				console.log(operatorValue);
+//				console.log(inputValue2)
 		switch(operatorValue){
-				case "clear":
-		        input1.innerHTML = "";
+			case "+":
+				input2.innerHTML = "+";
+				break;
+			case "-":
+				input2.innerHTML = "-"
+				break;
+			case "/":
+				input2.innerHTML = "/";
+				break;
+			case "*":
+				input2.innerHTML = "*";
+				break;
+			case "clear":
+		    	input1.innerHTML = "";
 		        input2.innerHTML = "";
 		        input3.innerHTML = "";
 		        result.innerHTML = "";
         		break;
-        		case "potency":
+        	case "potency":
         			input2.innerHTML += "^";
         			break;
-				case "square":
+			case "square":
 					input2.innerHTML += "^";
 					input3.innerHTML = "2";
 					break;
-				case "=":
-					let equation = resultFunction();
-					if (equation) {
-						try {		
-							result.innerHTML = "" + eval(equation);
-							let maxlength = 4;
-							memoryArray.length > maxlength ? memoryArray.pop() && memoryArray.unshift( eval(equation) ) : memoryArray.unshift( eval(equation) );
-							} 
-						catch (e) {
-							   alert("ERROR");
-							};
+			case "=":
+				let equation = resultFunction();
+				if (equation) {
+					try {		
+						result.innerHTML = "" + eval(equation);
+						let maxlength = 4;
+						memoryArray.length > maxlength ? memoryArray.pop() && memoryArray.unshift( eval(equation) ) : memoryArray.unshift( eval(equation) );
+						} 
+					catch (e) {
+					   alert("ERROR");
 						};
-					break;
-				default:
-					break;
+				};
+				break;
+			default:
+				break;
 		};
 	});
 	buttonArray[idArray].addEventListener('click',function(){
-		const 		buttonValue	= this.id, 
-		    		inputValue1	= input1.innerHTML,
-					inputValue3 = input3.innerHTML;
-	});	
+		const 		buttonValue	= this.id;
+		let inputValue = input2.innerHTML == "" ? input1 : input3;
+		inputValue.innerHTML += buttonValue;
+	});
 };
 
