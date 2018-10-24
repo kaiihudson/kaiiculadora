@@ -216,6 +216,11 @@ for(let idArray = 0; idArray < buttonArray.length; idArray++){
 			default:
 				break;
 		};
+	document.getElementById('mem1').innerHTML= memoryArray[0];
+	memoryArray[1] == null ? document.getElementById('mem2').innerHTML="" : document.getElementById('mem2').innerHTML= memoryArray[1];
+	memoryArray[2] == null ? document.getElementById('mem3').innerHTML="" : document.getElementById('mem3').innerHTML= memoryArray[2];
+	memoryArray[3] == null ? document.getElementById('mem4').innerHTML="" : document.getElementById('mem4').innerHTML= memoryArray[3];
+	memoryArray[4] == null ? document.getElementById('mem5').innerHTML="" : document.getElementById('mem5').innerHTML= memoryArray[4];
 	});
 	buttonArray[idArray].addEventListener('click',function(){
 		const 		buttonValue	= this.id;
