@@ -22,20 +22,6 @@ const 	buttonArray		=document.querySelectorAll(".key"),
 		memoryArray 	=[];
 
 /*
-function rootn(x,z){
-	//funcion raiz
-	let checkOdd = z % 2
-	if (checkOdd === 1 || x < 0) {
-		let x = -x ; 
-	};
-	let resultRoot 	= x ** 1/z ;
-	let normal 		= resultRoot ** z ;
-	if (Math.abs( x - normal ) && ( x > 0 === normal > 0)) {
-		return checkOdd ? resultRoot : -resultRoot
-	}
-};
-*/
-/*
 function continue(){
 	if ( result.innerHTML != null && function(event) clic on memx){
 		let value = this.innerHTML;
@@ -55,7 +41,7 @@ function resultFunction(){
 			equation = x + "**" + z;
 			break;
 		case "rootn":
-			equation = x + " ** ( 1/" + z+ " )";
+			equation = x + " ** ( 1/" + z + " )";
 			break;
 		case "sqroot":
 			equation = "Math.sqrt(" + x + ")";
