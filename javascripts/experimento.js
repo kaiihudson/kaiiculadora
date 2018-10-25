@@ -10,6 +10,8 @@
 // 5.- agregar capacidad de ejecutar algebra simple (detectar valor de x) [extra points]
 // ---
 
+//add math.js
+
 const 	buttonArray		=document.querySelectorAll(".key"),
 		operator		=document.querySelectorAll(".op"),
 		input1			=document.querySelector(".firoper"),
@@ -18,6 +20,7 @@ const 	buttonArray		=document.querySelectorAll(".key"),
 		result			=document.querySelector(".result"),
 		memory 			=document.querySelector(".memory li"),
 		memoryArray 	=[];
+
 /*
 function rootn(x,z){
 	//funcion raiz
@@ -52,7 +55,7 @@ function resultFunction(){
 			equation = x + "**" + z;
 			break;
 		case "rootn":
-			equation = x + " ** 1/" + z;
+			equation = x + " ** ( 1/" + z+ " )";
 			break;
 		case "sqroot":
 			equation = "Math.sqrt(" + x + ")";
@@ -131,10 +134,9 @@ document.onkeypress = function(event){
 					result.innerHTML = "" + eval(equation);
 					let maxlength = 4;
 					memoryArray.length > maxlength ? memoryArray.pop() && memoryArray.unshift( eval(equation) ) : memoryArray.unshift( eval(equation) );
-					console.log(equation);
+//					console.log(equation);
 					} catch (e) {
 						console.log(equation);
-						console.log(eval(equation));
 						alert("ERROR");
 					}
 				};		    	
