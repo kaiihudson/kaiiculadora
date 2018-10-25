@@ -18,8 +18,9 @@ const 	buttonArray		=document.querySelectorAll(".key"),
 		input2			=document.querySelector(".secoper"),
 		input3			=document.querySelector(".thioper"),
 		result			=document.querySelector(".result"),
-		memory 			=document.querySelector(".memory li"),
-		memoryArray 	=[];
+		memory 			=document.querySelector(".memory"),
+		memoryArray 	=[],
+		btnArray		=
 
 /*
 function continue(){
@@ -230,5 +231,13 @@ for(let idArray = 0; idArray < buttonArray.length; idArray++){
 		let inputValue = input2.innerHTML == "" ? input1 : input3;
 		inputValue.innerHTML += buttonValue;
 	});
+	if (memoryArray.length < 0 ){
+		memory[idArray].addEventListener('click',function(){
+			const		memoryValue = this.innerHTML;
+			console.log(this.id)
+			let inputValue = result.innerHTML == "" ? console.log("you did it"):input1;
+			inputValue.innerHTML = memoryValue;
+		});
+	};
 };
 
