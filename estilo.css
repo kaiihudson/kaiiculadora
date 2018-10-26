@@ -12,6 +12,15 @@
 	margin-right:			10px;
 	height: 				10%;
 }
+.result{
+	background-color:		gray;
+	color:					black;
+	font-style:				italic;
+	font-weight:			bold;
+	margin-left:			120px;
+	margin-right:			10px;
+	height:					80px;
+}
 div{
 	margin-left: 			10px;
 	margin-right: 			10px;
@@ -22,11 +31,15 @@ div{
 	border-color: 			black;
 	font-family:			arial;
 }
+#clear{
+	background-color:		red;
+}
 #equals{
 	background-color:		red;
 }
 .key{
 	background-color: 		orange;
+	height:					50px;
 }
 .op{
 	background-color:  		#FF5733;
