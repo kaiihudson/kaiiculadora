@@ -1,0 +1,33 @@
+.memory{
+	background-color: 		#7FFF00;
+	margin-left:			10px; 
+}
+#secoper{
+	background-color: 		#64c900;
+}
+.input{
+	color: 					#51a300;
+	background-color: 		#7FFF00;
+	margin-left:			10px;
+	margin-right:			10px;
+	height: 				10%;
+}
+div{
+	margin-left: 			10px;
+	margin-right: 			10px;
+}
+#calc{
+	height: 				50%;
+	background-color: 		powderblue;
+	border-color: 			black;
+	font-family:			arial;
+}
+#equals{
+	background-color:		red;
+}
+.key{
+	background-color: 		orange;
+}
+.op{
+	background-color:  		#FF5733;
+}

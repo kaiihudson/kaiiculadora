@@ -14,12 +14,15 @@
 
 const 	buttonArray		=document.querySelectorAll(".key"),
 		operator		=document.querySelectorAll(".op"),
+		equals	 		=document.querySelector("equals"),
 		input1			=document.querySelector(".firoper"),
 		input2			=document.querySelector(".secoper"),
 		input3			=document.querySelector(".thioper"),
 		result			=document.querySelector(".result"),
 		memory 			=document.querySelector(".memory li"),
 		memoryArray 	=[];
+console.log(operator);
+console.log(equals)
 /*
 function continue(){
 	if ( result.innerHTML != null && function(event) clic on memx){
@@ -202,7 +205,7 @@ for(let idArray = 0; idArray < buttonArray.length; idArray++){
 					input2.innerHTML += "^";
 					input3.innerHTML = "2";
 					break;
-			case "=":
+			case "equals":
 				let equation = resultFunction(); ;
 				if (equation) {
 					try {		
