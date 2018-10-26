@@ -19,9 +19,7 @@ const 	buttonArray		=document.querySelectorAll(".key"),
 		input3			=document.querySelector(".thioper"),
 		result			=document.querySelector(".result"),
 		memory 			=document.querySelector(".memory"),
-		memoryArray 	=[],
-		btnArray		=
-
+		memoryArray 	=[];
 /*
 function continue(){
 	if ( result.innerHTML != null && function(event) clic on memx){
@@ -205,7 +203,7 @@ for(let idArray = 0; idArray < buttonArray.length; idArray++){
 					input3.innerHTML = "2";
 					break;
 			case "=":
-				let equation = resultFunction();
+				let equation = resultFunction(); ;
 				if (equation) {
 					try {		
 						result.innerHTML = "" + eval(equation);
@@ -233,8 +231,8 @@ for(let idArray = 0; idArray < buttonArray.length; idArray++){
 	});
 	if (memoryArray.length < 0 ){
 		memory[idArray].addEventListener('click',function(){
-			const		memoryValue = this.innerHTML;
-			console.log(this.id)
+			const		memoryValue = this.id;
+			console.log(memoryValue);
 			let inputValue = result.innerHTML == "" ? console.log("you did it"):input1;
 			inputValue.innerHTML = memoryValue;
 		});
