@@ -1,71 +1,78 @@
 <html>
 	<title>CALCULADORA</title>
-	<head></head>
+	<head>
+		<link rel="stylesheet" type="text/css" href="./estilo.css">
+	</head>
 	<body bgcolor="white">
 		<script src="./javascripts/experimento.js" type="text/javascript" charset="utf-8" async defer></script>
 		<center>
 			<h1>LA  no tan ARITMETICA CALCULADORA MAGICA</h1>
 			<h5><center>que arreglo el 3d0</center></h5>
-		<table bgcolor="gray" id="calc" width="800" style="height: 50%" border="5">
+		<table bgcolor="gray" id="calc" width="800" border="5">
 			<caption><center>CALCULADORA MAGICA</center></caption>
 			<tbody>
 				<tr>
-					<td colspan="3" rowspan="1" bgcolor="#7FFFD4" class="input" style="height: 25%">
+					<td colspan="2" rowspan="1" bgcolor="#7FFF00" class="input">
 						<div class="firoper"></div>
-						<div class="secoper" style="background-color:cyan" align="center"></div>
+						<div class="secoper" align="center"></div>
 						<div class="thioper"></div>
 					</td>
 					<td bgcolor="#7FFF00" class="memory">
-						<li id="mem1"></li>
-						<li id="mem2"></li>
-						<li id="mem3"></li>
-						<li id="mem4"></li>
-						<li id="mem5"></li>
+						<li id="mem1" ></li>
+						<li id="mem2" ></li>
+						<li id="mem3" ></li>
+						<li id="mem4" ></li>
+						<li id="mem5" ></li>
 					</td>
 				</tr>
 				<tr>
-					<td align="right" colspan="5" bgcolor="white" style="height: 10%">
+					<td align="right" colspan="5" bgcolor="white"  height="80">
 						<div class="result"></div>
 					</td>
 				</tr>
 				<tr>
-					<td class="op" id="root" width="200"><center>sQ root</center></td>
-					<td class="op" id="potency" width="200"><center>poWer of</center></td>
-					<td class="op" id="square" width="200"><center>^2 (E)</center></td>
-					<td class="op" id="rootx" width="200"><center>Root</center></td>
+					<td class="op" id="rootx" width="333"><center>Root</center></td>
+					<td class="op" id="root" width="333"><center>sQ root</center></td>
+					<td width="333"></td>
+				</tr>
+				<tr>
+
+					<td class="op" id="potency"><center>poWer of</center></td>
+					<td class="op" id="square"><center>^2 (E)</center></td>
+					<td></td>
 				</tr> 
 				<tr>
-					<td class="op" id="ans"><center>Ans</center></td>
-					<td></td>
-					<td></td>
+
+					<td class="op" id="+" bgcolor="#FF5733"><center>+</center></td>
+					<td class="op" id="-" bgcolor="#FF5733"><center>-</center></td>
 					<td></td>
 				</tr>
 				<tr>
+
+					<td class="op" id="/" bgcolor="#FF5733"><center>/</center></td>
+					<td class="op" id="*" bgcolor="#FF5733"><center>*</center></td>
 					<td id="clear" bgcolor="red"><center><b>Clear</b></center></td>
-					<td class="op" id="/"><center>/</center></td>
-					<td class="op" id="*"><center>*</center></td>
-					<td class="op" id="-"><center>-</center></td>
 				</tr>
 				<tr>
-					<td id="7" class="key"><center>7</center></td>
+					<td id="7" class="key" height="50"><center>7</center></td>
 					<td id="8" class="key"><center>8</center></td>
-					<td id="9" class="key"><center>9</center></td>
-					<td class="op" id="+" rowspan="2"><center>+</center></td>			
+					<td id="9" class="key"><center>9</center></td>		
 				</tr>
 				<tr>
-					<td id="4" class="key"><center>4</center></td>
+					<td id="4" class="key" height="50"><center>4</center></td>
 					<td id="5" class="key"><center>5</center></td>
 					<td id="6" class="key"><center>6</center></td>
 				</tr>
 				<tr>
-					<td id="1" class="key"><center>1</center></td>
+					<td id="1" class="key" height="50"><center>1</center></td>
 					<td id="2" class="key"><center>2</center></td>
 					<td id="3" class="key"><center>3</center></td>
-					<td class="op" id="=" bgcolor="green" rowspan="2"><center>=</center></td>			
+		
 				</tr>
 				<tr class="key">
-					<td id="0" colspan="2"><center>0</center></td>
-					<td id="."><center>.</center></td>
+					<td id="0" height="50"><center>0</center></td>
+					<td class="op" id="ans"><center>Ans</center></td>
+					<td class="op" id="=" bgcolor="green"><center>=</center></td>
 				</tr>
 			</tbody>
 		</table>
