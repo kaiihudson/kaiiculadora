@@ -45,18 +45,34 @@ div{
 	font-size:  			25px;
 }
 #clear{
-	background-color:		red;
+	background-color:		#ff0000;
+}
+#clear:active{
+	background-color:		#cc0000;
 }
 #equals{
-	background-color:		red;
+	background-color:		#ff0000;
+	font-family:  			'Permanent Marker';
+}
+#equals:active{
+	background-color:		#cc0000;
 	font-family:  			'Permanent Marker';
 }
 .key{
-	background-color: 		orange;
+	background-color: 		#FFA500;
+	height:					50px;
+	font-family:			'Special Elite';
+	font-size:  			25px;
+}
+.key:active{
+	background-color: 		#cc8400;
 	height:					50px;
 	font-family:			'Special Elite';
 	font-size:  			25px;
 }
 .op{
 	background-color:  		#FF5733;
+}
+.op:active{
+	background-color:  		#cc4528;
 }

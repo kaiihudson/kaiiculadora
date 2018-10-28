@@ -1,37 +1,28 @@
+/*
+---
+ 1.- con el resultado presente (funcion continue):
+	a.- si presiono un numero, guardar resultado, pero no borrarlo, borrar input 1 2 y 3
+	b.- si presiono una operacion, ans, operacion y finalmente pedir input3
+ 2.- agregar una tabla al costado para usarla de memoria para la calculadora, 5 espacios
+		2018-10-28 -- se agrego la memoria
+ 	a.- ser capaz de utilizar esos resultados como input1 al hacerle clic
+ 3.- agregar mas funciones según calculadora cientifica
+ 		2018-10-28 -- se agrego funcion logaritmica
+ 4.- create easter eggs for shit and giggles
+ 5.- agregar capacidad de ejecutar algebra simple (detectar valor de x) [extra points]
+ ---
+*/
 
-// ------
-// 1.- con el resultado presente (funcion continue):
-//	a.- si presiono un numero, guardar resultado, pero no borrarlo, borrar input 1 2 y 3
-//	b.- si presiono una operacion, ans, operacion y finalmente pedir input3
-// 2.- agregar una tabla al costado para usarla de memoria para la calculadora, 5 espacios //DONE
-// 	a.- ser capaz de utilizar esos resultados como input1 al hacerle clic
-// 3.- agregar mas funciones según calculadora cientifica
-// 4.- create easter eggs for shit and giggles
-// 5.- agregar capacidad de ejecutar algebra simple (detectar valor de x) [extra points]
-// ---
-
-//add math.js
 
 const 	buttonArray		=document.querySelectorAll(".key"),
 		operator		=document.querySelectorAll(".op"),
-		equals	 		=document.querySelector("equals"),
 		input1			=document.querySelector(".firoper"),
 		input2			=document.querySelector(".secoper"),
 		input3			=document.querySelector(".thioper"),
 		result			=document.querySelector(".result"),
 		memory 			=document.querySelector(".memory li"),
 		memoryArray 	=[];
-console.log(operator);
-console.log(equals)
-/*
-function continue(){
-	if ( result.innerHTML != null && function(event) clic on memx){
-		let value = this.innerHTML;
-		input1.innerHTML = value;
-		input2.innerHTML = "";
-	}
-}
-*/
+
 function resultFunction(){
 	const 	x = input1.innerHTML,
 			y = input2.innerHTML,
@@ -47,6 +38,10 @@ function resultFunction(){
 			break;
 		case "sqroot":
 			equation = "Math.sqrt(" + x + ")";
+			break;
+		case "log10":
+		case "xlog":
+			equation = "Math.log("+ x + ") / Math.log("+ z +")";
 			break;
 		default:
 			equation = x + y + z;
@@ -70,51 +65,46 @@ document.onkeypress = function(event){
 	if (key > 47 && key < 58){
 		inputNumbers.innerHTML += (key-48)
 		return
-	}
-
-	//alert(key); 		
-//	console.log(key)
+	};
+	//console.log(key);
 	switch(key){
 		case 42:
-			input2.innerHTML += "*";
+			input2.innerHTML = "*";
 			break;
-		//tecla +
 		  case 43:
-			input2.innerHTML += "+";
+			input2.innerHTML = "+";
 			break;
-		//tecla -
 		  case 45:
-			input2.innerHTML += "-";
+			input2.innerHTML = "-";
 			break;
-		//tecla .
 		  case 46:
-			input2.innerHTML += ".";
+			input2.innerHTML = ".";
 			break;
-		//tecla /
 		case 47:
-			input2.innerHTML += "/";
+			input2.innerHTML = "/";
 			break;
-		//tecla q
 		case 113:
 			input2.innerHTML = "sqroot";
 			input3.innerHTML = "2" ;
 			break;
-		//tecla w
 		case 119:
-			input2.innerHTML += "^";
+			input2.innerHTML = "^";
 			break;
-		//tecla e
 		case 101:
 			input2.innerHTML = "^";
 			input3.innerHTML = "2";
 			break;
-		//tecla r
 		case 114:
 			input2.innerHTML = "rootn";
 			break;
-		//tecla send
+		case 115:
+			input2.innerHTML =	"xlog";
+			break;
+		case 100:
+			input2.innerHTML = "log10";
+			input3.innerHTML = 10;
+			break;
 		case 13:
-		//tecla =
 		case 61:
 			let equation = resultFunction();
 			  if (equation) {
@@ -122,7 +112,6 @@ document.onkeypress = function(event){
 					result.innerHTML = "" + eval(equation);
 					let maxlength = 4;
 					memoryArray.length > maxlength ? memoryArray.pop() && memoryArray.unshift( eval(equation) ) : memoryArray.unshift( eval(equation) );
-//					console.log(equation);
 					} catch (e) {
 						console.log(equation);
 						alert("ERROR");
@@ -130,7 +119,6 @@ document.onkeypress = function(event){
 				};		    	
 			break;
 		case 67:
-		// tecla c
 		case 99:
 	    case 99:
 			input1.innerHTML = null;
@@ -138,7 +126,6 @@ document.onkeypress = function(event){
 			input3.innerHTML = null;
 			result.innerHTML = null;
 			break;
-		//tecla a
 		case 97:
 			input1.innerHTML =	result.innerHTML;
 			input2.innerHTML = "";
@@ -166,6 +153,7 @@ for(let idArray = 0; idArray < buttonArray.length; idArray++){
 				//añade casos especificos
 //				console.log(operatorValue);
 //				console.log(inputValue2)
+		console.log(operatorValue);
 		switch(operatorValue){
 			case "+":
 				input2.innerHTML = "+";
@@ -205,6 +193,13 @@ for(let idArray = 0; idArray < buttonArray.length; idArray++){
 					input2.innerHTML += "^";
 					input3.innerHTML = "2";
 					break;
+			case "logX":
+				input2.innerHTML =	"xlog";
+				break;
+			case "log10":
+				input2.innerHTML = "log10";
+				input3.innerHTML = 10;
+				break;
 			case "equals":
 				let equation = resultFunction(); ;
 				if (equation) {
@@ -230,6 +225,7 @@ for(let idArray = 0; idArray < buttonArray.length; idArray++){
 	buttonArray[idArray].addEventListener('click',function(){
 		const 		buttonValue	= this.id;
 		let inputValue = input2.innerHTML == "" ? input1 : input3;
+		console.log(buttonValue);
 		inputValue.innerHTML += buttonValue;
 	});
 	if (memoryArray.length < 0 ){
