@@ -187,10 +187,10 @@ for(let idArray = 0; idArray < buttonArray.length; idArray++){
 		        result.innerHTML = "";
         		break;
         	case "potency":
-        			input2.innerHTML += "^";
+        			input2.innerHTML = "^";
         			break;
 			case "square":
-					input2.innerHTML += "^";
+					input2.innerHTML = "^";
 					input3.innerHTML = "2";
 					break;
 			case "logX":
