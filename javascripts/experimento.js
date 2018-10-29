@@ -71,13 +71,13 @@ document.onkeypress = function(event){
 		case 42:
 			input2.innerHTML = "*";
 			break;
-		  case 43:
+		case 43:
 			input2.innerHTML = "+";
 			break;
-		  case 45:
+		case 45:
 			input2.innerHTML = "-";
 			break;
-		  case 46:
+		case 46:
 			input2.innerHTML = ".";
 			break;
 		case 47:
