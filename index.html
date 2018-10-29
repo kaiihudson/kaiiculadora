@@ -1,5 +1,5 @@
 <html>
-	<title>CALCULADORA</title>
+	<title>KaiiCuladora 1.5</title>
 	<head>
 		<link rel="stylesheet" type="text/css" href="./estilo.css">
 		<link href="https://fonts.googleapis.com/css?family=Permanent+Marker|Special+Elite|VT323" rel="stylesheet">
@@ -7,13 +7,13 @@
 	<body bgcolor="white">
 		<script src="./javascripts/experimento.js" type="text/javascript" charset="utf-8" async defer></script>
 		<center>
-			<h1 class="title">LA  no tan ARITMETICA CALCULADORA MAGICA</h1>
+			<h1 class="title">LA no tan CIENTIFICA KaiiCULADORA</h1>
 			<div class="subtitle"><center>que arreglo el 3d0</center></div>
 		<table bgcolor="gray" id="calc" width="800" border="5">
-			<caption class="title"><center>CALCULADORA MAGICA</center></caption>
+			<caption class="title"><center>CALCULADORA "cientifica"</center></caption>
 			<tbody>
 				<tr>
-					<td colspan="2" rowspan="1" class="input">
+					<td colspan="4" rowspan="1" class="input">
 						<div class="firoper"></div>
 						<div class="secoper" align="center"></div>
 						<div class="thioper"></div>
@@ -30,45 +30,56 @@
 					<td colspan="5" class="result"></td>
 				</tr>
 				<tr>
-					<td class="op" id="rootx" width="200"><center>Nthoot (R)</center></td>
-					<td class="op" id="root" width="200"><center>√ (Q)</center></td>
-					<td width="200" class="op" id="logX"><center>log <small>y</small> X (S)</center></td>
+					<td width="200" ><center>Dec <=> BIN</center></td>
+					<td width="200" ><center>!</center></td>
+					<td width="200" ><center>log<small>n</small></center></td>
+					<td width="200" class="op" id="logX"><center>log<small>y</small>X (S)</center></td>
+					<td width="200" class="op" id="log10"><center>log<small>10</small>X (D)</center></td>
 
 				</tr>
 				<tr>
-					<td class="op" id="potency"><center>^ (W)</center></td>
-					<td class="op" id="square"><center>^2 (E)</center></td>
-					<td class="op" id="log10"><center>log <small>10</small> X (D)</center></td>
+					<td class="op" id="potency"><center>x<sup>y</sup> (W)</center></td>
+					<td class="op" id="square"><center>x<sup>2</sup> (E)</center></td>
+					<td><center>x<sup>-1</sup></center></td>
+					<td class="op" id="rootx"><center><sup>y</sup>√<small>x</small> (R)</center></td>
+					<td class="op" id="root"><center>√<small>x</small> (Q)</center></td>
 				</tr> 
 				<tr>
-					<td class="op" id="+"><center>+</center></td>
-					<td class="op" id="-"><center>-</center></td>
 					<td class="op" id="minus"><center>(-) (F)</center></td>
-				</tr>
-				<tr>
-					<td class="op" id="/"><center>/</center></td>
-					<td class="op" id="*"><center>*</center></td>
-					<td class="op" id="ans"><center>Ans (A)</center></td>					
+					<td><center>Absolute</center></td>
+					<td><center>sin</center></td>
+					<td><center>cos</center></td>
+					<td><center>tan</center></td>
 				</tr>
 				<tr>
 					<td id="7" class="key"><center>7</center></td>
 					<td id="8" class="key"><center>8</center></td>
-					<td id="9" class="key"><center>9</center></td>		
+					<td id="9" class="key"><center>9</center></td>
+					<td id="del" class="op"><center>DEL</center></td>
+					<td id="clear" class="op"><center>Clear</center></td>
+		
 				</tr>
 				<tr>
 					<td id="4" class="key"><center>4</center></td>
 					<td id="5" class="key"><center>5</center></td>
 					<td id="6" class="key"><center>6</center></td>
+					<td class="op" id="*"><center>*</center></td>
+					<td class="op" id="/"><center>/</center></td>
 				</tr>
 				<tr>
 					<td id="1" class="key"><center>1</center></td>
 					<td id="2" class="key"><center>2</center></td>
 					<td id="3" class="key"><center>3</center></td>
+					<td class="op" id="+"><center>+</center></td>
+					<td class="op" id="-"><center>-</center></td>
+
 		
 				</tr>
 				<tr>
 					<td id="0" class="key"><center>0</center></td>
-					<td class="op" id="clear"><center>Clear</center></td>
+					<td id="." class="key"><center>.</center></td>
+					<td id="notation" class="op"><center>x10^<sup>x</sup></center></td>
+					<td class="op" id="ans"><center>Ans (A)</center></td>					
 					<td class="op" id="equals"><center>=</center></td>
 				</tr>
 			</tbody>
