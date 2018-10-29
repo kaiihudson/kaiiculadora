@@ -20,7 +20,7 @@ const 	buttonArray		=document.querySelectorAll(".key"),
 		input2			=document.querySelector(".secoper"),
 		input3			=document.querySelector(".thioper"),
 		result			=document.querySelector(".result"),
-		memory 			=document.querySelector(".memory li"),
+		memory 			=document.querySelectorAll(".memory li"),
 		memoryArray 	=[];
 
 function resultFunction(){
@@ -146,14 +146,11 @@ document.onkeypress = function(event){
 // codigo para que funcione con las teclas
 //------------------------------
 
-for(let idArray = 0; idArray < buttonArray.length; idArray++){
+for(let idArray = 0; idArray < operator.length; idArray++){
 	//la cosa para que funcione con clics
 	operator[idArray].addEventListener('click', function(){
 		const 	operatorValue 	= this.id ; 
 				//añade casos especificos
-//				console.log(operatorValue);
-//				console.log(inputValue2)
-		console.log(operatorValue);
 		switch(operatorValue){
 			case "+":
 				input2.innerHTML = "+";
@@ -222,25 +219,29 @@ for(let idArray = 0; idArray < buttonArray.length; idArray++){
 	memoryArray[3] == null ? document.getElementById('mem4').innerHTML="" : document.getElementById('mem4').innerHTML= memoryArray[3];
 	memoryArray[4] == null ? document.getElementById('mem5').innerHTML="" : document.getElementById('mem5').innerHTML= memoryArray[4];
 	});
+};
+for(let idArray = 0; idArray < buttonArray.length; idArray++){
 	buttonArray[idArray].addEventListener('click',function(){
 		const 		buttonValue	= this.id;
 		let inputValue = input2.innerHTML == "" ? input1 : input3;
 		console.log(buttonValue);
 		inputValue.innerHTML += buttonValue;
 	});
-	if (memoryArray.length < 0 ){
+};
+//if (memoryArray.length > 0 ){
+	for(let idArray = 0; idArray < memory.length; idArray++){
 		memory[idArray].addEventListener('click',function(){
 			const		memoryValue = this.id;
-
+			console.log(memoryValue)
 			switch(memoryValue){
 				case "mem1":
-				input1.innerHTML = document.getElementById('mem1').innerHTML;
+					input1.innerHTML = document.getElementById('mem1').innerHTML;
 				break;
-			}
+			default:
+				break;
+				}
+			});
+		};
+//	};
 
-			//let inputValue = result.innerHTML == "" ? console.log("you did it"):input1;
-			//inputValue.innerHTML = memoryValue;
-		});
-	};
-};
 
