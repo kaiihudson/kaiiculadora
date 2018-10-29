@@ -7,11 +7,18 @@
 }
 .memory{
 	background-color: 		#7FFF00;
-	margin-left:			10px;
-	margin-top:  			10px;
-	margin-bottom:  		10px; 
+	color:  				#51a300;
+	margin-left:			5px;
+	margin-top:  			5px;
+	margin-bottom:  		5px; 
 	font-family:			'Special Elite';
-	font-size:  			25px;
+	font-size:  			15px;
+}
+.memory:hover{
+	color:					blue;
+}
+.memory:active{
+	color: 			 		#000000;
 }
 .input{
 	color: 					#51a300;
@@ -25,7 +32,7 @@
 .result{
 	background-color:		gray;
 	color:					black;
-	margin-left:			120px;
+	margin-left:			20px;
 	margin-right:			10px;
 	height:					80px;
 	font-style:				italic;

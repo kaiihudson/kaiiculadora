@@ -236,7 +236,29 @@ for(let idArray = 0; idArray < buttonArray.length; idArray++){
 			switch(memoryValue){
 				case "mem1":
 					input1.innerHTML = document.getElementById('mem1').innerHTML;
-				break;
+					input2.innerHTML = "";
+					input3.innerHTML = "";
+					break;
+				case "mem2":
+					input1.innerHTML = document.getElementById('mem2').innerHTML;
+					input2.innerHTML = "";
+					input3.innerHTML = "";
+					break;
+				case "mem3":
+					input1.innerHTML = document.getElementById('mem3').innerHTML;
+					input2.innerHTML = "";
+					input3.innerHTML = "";
+					break;
+				case "mem4":
+					input1.innerHTML = document.getElementById('mem4').innerHTML;
+					input2.innerHTML = "";
+					input3.innerHTML = "";
+					break;
+				case "mem5":
+					input1.innerHTML = document.getElementById('mem5').innerHTML;
+					input2.innerHTML = "";
+					input3.innerHTML = "";
+					break;
 			default:
 				break;
 				}
