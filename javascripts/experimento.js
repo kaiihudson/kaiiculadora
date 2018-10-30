@@ -22,7 +22,6 @@ const 	buttonArray		=document.querySelectorAll(".key"),
 		result			=document.querySelector(".result"),
 		memory 			=document.querySelectorAll(".memory li"),
 		memoryArray 	=[];
-
 function resultFunction(){
 	const 	x = input1.innerHTML,
 			y = input2.innerHTML,
@@ -30,31 +29,54 @@ function resultFunction(){
 	let equation;
 	//armar la ecuacion
 	switch(y){
+		case "invMul":
 		case "^":
 			equation = x + "**" + z;
 			break;
+		case "sqroot":
 		case "rootn":
 			equation = x + " ** ( 1/" + z + " )";
-			break;
-		case "sqroot":
-			equation = "Math.sqrt(" + x + ")";
 			break;
 		case "log10":
 		case "xlog":
 			equation = "Math.log("+ x + ") / Math.log("+ z +")";
 			break;
+		case "ln":
+			equation = "Math.log(" + x + ")";
+			break;
+		case "!":
+			equation = factorialCalculator(x);
+			break;
+		case "absolute":
+			equation = "Math.Abs(" + x + ")";
+			break;
+		case "sin":
+			equation = "Math.sin(" + x + ")";
+			break;
+		case "cos":
+			equation = "Math.cos("+ x + ")";
+			break;
+		case "tan":
+			equation = "Math.sin("+ x +")/Math.cos(" + x + ")";
+			break;
 		default:
 			equation = x + y + z;
 			break;
 	}
-	if ( x == null || y == null || z ==  null){
+	if ( x == "" || y == "" || z ==  ""){
 				alert("you're missing something");
 			return null;
 		} else {
 			return equation
 		}
 	};
-
+function factorialCalculator(){
+	let value = input1.innerHTML;
+	for(let primer = 1 ; primer < value ; primer ++){
+		value = value * primer ;
+	};
+	return value;
+}
 //------------------------------
 // codigo para que funcione con el teclado
 //------------------------------
@@ -66,7 +88,7 @@ document.onkeypress = function(event){
 		inputNumbers.innerHTML += (key-48)
 		return
 	};
-	//console.log(key);
+	console.log(key);
 	switch(key){
 		case 42:
 			input2.innerHTML = "*";
@@ -78,7 +100,7 @@ document.onkeypress = function(event){
 			input2.innerHTML = "-";
 			break;
 		case 46:
-			input2.innerHTML = ".";
+			inputNumbers.innerHTML += ".";
 			break;
 		case 47:
 			input2.innerHTML = "/";
@@ -88,22 +110,56 @@ document.onkeypress = function(event){
 			input3.innerHTML = "2" ;
 			break;
 		case 119:
-			input2.innerHTML = "^";
+			input2.innerHTML = "!";
+			input3.innerHTML = "Return the factorial of X"
 			break;
 		case 101:
-			input2.innerHTML = "^";
-			input3.innerHTML = "2";
+			input2.innerHTML = "ln";
 			break;
 		case 114:
-			input2.innerHTML = "rootn";
+			input2.innerHTML = "xlog";
+			break;
+		case 116:
+			input2.innerHTML = "log10";
+			input3.innerHTML = "10";
+			break;
+		case 97:
+			input2.innerHTML = "^";
 			break;
 		case 115:
-			input2.innerHTML =	"xlog";
+			input2.innerHTML =	"^";
+			input3.innerHTML = "2";
 			break;
 		case 100:
-			input2.innerHTML = "log10";
-			input3.innerHTML = 10;
+			input2.innerHTML = "^";
+			input3.innerHTML = "-1";
 			break;
+		case 102:
+			input2.innerHTML = "xlog";
+			break;
+		case 103:
+			input2.innerHTML = "sqroot";
+			input3.innerHTML = "2";
+			break;
+		case 122:
+			input2.innerHTML = "invMul";
+			input3.innerHTML = "-1";
+			break;
+		case 120:
+			input2.innerHTML = "absolute"
+			input3.innerHTML = "Return positive value of X";
+			break;
+		case 99:
+			input2.innerHTML = "sin";
+			input3.innerHTML = "Return the sin value of X";
+			break;
+		case 118:
+			input2.innerHTML = "cos";
+			input3.innerHTML = "Return the cos value of X";
+			break;
+		case 98:
+			input2.innerHTML = "tan";
+			input3.innerHTML = "return the tan value of X"
 		case 13:
 		case 61:
 			let equation = resultFunction();
@@ -118,15 +174,25 @@ document.onkeypress = function(event){
 					}
 				};		    	
 			break;
-		case 67:
-		case 99:
-	    case 99:
+	    case 60:
 			input1.innerHTML = null;
 			input2.innerHTML = null;
 			input3.innerHTML = null;
 			result.innerHTML = null;
 			break;
-		case 97:
+		case 124:
+			console.log(inputNumbers.innerHTML)
+			let 	current = inputNumbers.innerHTML,
+					string 	= current.toString();
+			console.log(string);
+			currentArray = string.split("");
+			console.log("slpit into " + currentArray)
+			currentArray.slice(0,-1);
+			let final = currentArray.join();
+			console.log(final)
+			inputNumbers.innerHTML = final;
+			break;
+		case 32:
 			input1.innerHTML =	result.innerHTML;
 			input2.innerHTML = "";
 			input3.innerHTML = "";
