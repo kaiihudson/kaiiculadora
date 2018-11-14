@@ -29,7 +29,6 @@ function resultFunction(){
 	let equation;
 	//armar la ecuacion
 	switch(y){
-		case "invMul":
 		case "^":
 			equation = x + "**" + z;
 			break;
@@ -39,16 +38,16 @@ function resultFunction(){
 			break;
 		case "log10":
 		case "xlog":
-			equation = "Math.log("+ x + ") / Math.log("+ z +")";
+			equation = "math.log("+ x + ") / Math.log("+ z +")";
 			break;
 		case "ln":
-			equation = "Math.log(" + x + ")";
+			equation = "math.log(" + x + ")";
 			break;
 		case "!":
-			equation = factorialCalculator();
+			equation = "math.factorial(" + x + ")"
 			break;
-		case "absolute":
-			equation = "Math.Abs(" + x + ")";
+		case "|x|":
+			equation = "math.abs(" + x + ")";
 			break;
 		case "sin":
 			equation = "Math.sin(" + x + ")";
@@ -143,8 +142,8 @@ document.onkeypress = function(event){
 			input3.innerHTML = "2";
 			break;
 		case 122:
-			input2.innerHTML = "invMul";
-			input3.innerHTML = "-1";
+			let invMul = input1.innerHTML
+			input1.innerHTML = invMul * -1;
 			break;
 		case 120:
 			input2.innerHTML = "|x|"
@@ -165,7 +164,7 @@ document.onkeypress = function(event){
 		case 61:
 			let equation = resultFunction();
 			  if (equation) {
-				   try {		
+				  try {		
 					result.innerHTML = "" + eval(equation);
 					let maxlength = 4;
 					memoryArray.length > maxlength ? memoryArray.pop() && memoryArray.unshift( eval(equation) ) : memoryArray.unshift( eval(equation) );
@@ -182,16 +181,11 @@ document.onkeypress = function(event){
 			result.innerHTML = null;
 			break;
 		case 124:
-			console.log(inputNumbers.innerHTML)
-			let 	current = inputNumbers.innerHTML,
-					string 	= current.toString();
-			console.log(string);
-			currentArray = string.split("");
-			console.log("slpit into " + currentArray)
-			currentArray.slice(0,-1);
-			let final = currentArray.join();
-			console.log(final)
-			inputNumbers.innerHTML = final;
+			// borrar
+			let erase = inputNumbers.innerHTML;
+			erase.isString();
+			erase.pop();
+			console.log(erase)
 			break;
 		case 32:
 			input1.innerHTML =	result.innerHTML;
@@ -265,17 +259,17 @@ for(let idArray = 0; idArray < operator.length; idArray++){
 				input3.innerHTML = 10;
 				break;
 			case "equals":
-				let equation = resultFunction(); ;
-				if (equation) {
-					try {		
-						result.innerHTML = "" + eval(equation);
-						let maxlength = 4;
-						memoryArray.length > maxlength ? memoryArray.pop() && memoryArray.unshift( eval(equation) ) : memoryArray.unshift( eval(equation) );
-						} 
-					catch (e) {
-					   alert("ERROR");
-						};
-				};
+				//let equation = resultFunction(); ;
+				//if (equation) {
+				//	try {		
+				//		result.innerHTML = "" + eval(equation);
+				//		let maxlength = 4;
+				//		memoryArray.length > maxlength ? memoryArray.pop() && memoryArray.unshift( eval(equation) ) : memoryArray.unshift( eval(equation) );
+				//		} 
+				//	catch (e) {
+				//	   alert("ERROR");
+				//		};
+				//};
 				break;
 			default:
 				break;
