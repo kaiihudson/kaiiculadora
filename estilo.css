@@ -72,6 +72,7 @@ div {
 	font-family: 'Permanent Marker';
 }
 .key {
+	cursor: pointer;
 	height: 50px;
 	background-color: #FFA500;
 	box-shadow: 2px 2px;
@@ -87,6 +88,7 @@ div {
 	font-size: 25px;
 }
 .op {
+	cursor: pointer;
 	background-color: #FF5733;
 	border-radius: 20px;
 	box-shadow: 2px 2px;
