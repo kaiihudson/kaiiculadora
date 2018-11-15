@@ -1,97 +1,99 @@
-.title{
-	font-family: 			'VT323';
-}	
-.subtitle{
-	font-family:  			'Permanent Marker';
-	font-size:  			20px;
+.title {
+	font-family: 'VT323';
 }
-.memory{
-	background-color: 		#7FFF00;
-	color:  				#51a300;
-	margin-left:			5px;
-	margin-top:  			5px;
-	margin-bottom:  		5px; 
-	font-family:			'Special Elite';
-	font-size:  			15px;
+.subtitle {
+	font-family: 'Permanent Marker';
+	font-size: 20px;
 }
-.memory:hover{
-	color:					blue;
+.memory {
+	background-color: #7FFF00;
+	color: #51a300;
+	margin-left: 5px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	font-family: 'Special Elite';
+	font-size: 15px;
 }
-.memory:active{
-	color: 			 		#000000;
+.memory:hover {
+	color: blue;
 }
-.input{
-	color: 					#51a300;
-	background-color: 		#7FFF00;
-	margin-left:			10px;
-	margin-right:			10px;
-	height: 				10%;
-	font-family:			'Special Elite';
-	font-size:  			25px;
+.memory:active {
+	color: #000000;
 }
-.result{
-	background-color:		gray;
-	color:					black;
-	margin-left:			20px;
-	margin-right:			10px;
-	height:					80px;
-	font-style:				italic;
-	font-weight:			bold;
-	font-family:			'Special Elite';
-	font-size:  			25px;
+.input {
+	color: #51a300;
+	background-color: #7FFF00;
+	margin-left: 10px;
+	margin-right: 10px;
+	height: 10%;
+	font-family: 'Special Elite';
+	font-size: 25px;
 }
-div{
-	margin-left: 			15px;
-	margin-right: 			15px;
+.result {
+	background-color: gray;
+	color: black;
+	margin-left: 20px;
+	margin-right: 10px;
+	height: 80px;
+	font-style: italic;
+	font-weight: bold;
+	font-family: 'Special Elite';
+	font-size: 25px;
 }
-#calc{
-	height: 				50%;
-	width:  				auto;
-	background-color: 		powderblue;
-	border-color: 			black;
-	font-family:  			'VT323';
-	font-size:  			25px;
-	border-spacing:  		5px;
+div {
+	margin-left: 15px;
+	margin-right: 15px;
 }
-#clear{
-	background-color:		#ff0000;
-	border-radius:  		20px;
-	box-shadow:  			2px 2px;
+#calc {
+	height: 50%;
+	width: auto;
+	background-color: powderblue;
+	border-color: black;
+	font-family: 'VT323';
+	font-size: 25px;
+	border-spacing: 5px;
 }
-#clear:active{
-	background-color:		#cc0000;
-	box-shadow:  			0px 0px;
+#clear {
+	background-color: #ff0000;
+	border-radius: 20px;
+	box-shadow: 2px 2px;
 }
-#equals{
-	background-color:		#ff0000;
-	box-shadow:  			2px 2px;
-	font-family:  			'Permanent Marker';
+#clear:active {
+	background-color: #cc0000;
+	box-shadow: 0px 0px;
 }
-#equals:active{
-	background-color:		#cc0000;
-	font-family:  			'Permanent Marker';
+#equals {
+	background-color: #ff0000;
+	box-shadow: 2px 2px;
+	font-family: 'Permanent Marker';
 }
-.key{
-	height:					50px;
-	background-color: 		#FFA500;
-	box-shadow:  			2px 2px;
-	border-radius:  		20px;
-	font-family:			'Special Elite';
-	font-size:  			25px;
+#equals:active {
+	background-color: #cc0000;
+	font-family: 'Permanent Marker';
 }
-.key:active{
-	background-color: 		#cc8400;
-	height:					50px;
-	box-shadow:  			0px 0px;
-	font-family:			'Special Elite';
-	font-size:  			25px;
+.key {
+	cursor: pointer;
+	height: 50px;
+	background-color: #FFA500;
+	box-shadow: 2px 2px;
+	border-radius: 20px;
+	font-family: 'Special Elite';
+	font-size: 25px;
 }
-.op{
-	background-color:  		#FF5733;
-	border-radius:  		20px;
-	box-shadow:  			2px 2px;
+.key:active {
+	background-color: #cc8400;
+	height: 50px;
+	box-shadow: 0px 0px;
+	font-family: 'Special Elite';
+	font-size: 25px;
 }
-.op:active{
-	background-color:  		#cc4528;
-	box-shadow:  			0px 0px;
+.op {
+	cursor: pointer;
+	background-color: #FF5733;
+	border-radius: 20px;
+	box-shadow: 2px 2px;
+}
+.op:active {
+	background-color: #cc4528;
+	box-shadow: 0px 0px;
 }
